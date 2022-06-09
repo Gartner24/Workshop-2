@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, InputGroup, Form, Button } from "react-bootstrap";
 import NavFooter from "../components/NavFooter";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FaRegComments } from "react-icons/fa";
 import { TbBrandTelegram } from "react-icons/tb";
+import axios from "axios";
 
 const Profiles = () => {
+
+    const getFotos = async (state) => {
+    const peticion = await axios.get('https://json-worksop-02.herokuapp.com/users')
+    const data = (peticion.data[0]);
+    console.log(data.fotos);
+    }
+
+    const [Fotos, setFotos] = useState(null);
+
+  useEffect(() => {
+    getFotos(setFotos);
+  }, []);
+
+
   return (
     <>
       <Container fluid>
