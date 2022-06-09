@@ -1,17 +1,23 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const ProfileIMG = ({ data }) => {
-  // console.log(data[0].fotos.map(foto => foto.id));
-  //   const itemData = data.map((item) => item.fotos);
-  //   itemData.map((item) => {
-  //   })
-  const newData = data.map(foto => foto.fotos)
-  const newnewData = newData.map(foto => foto.forEach(e => {return e}))
+
   return (
     <div>
-        {
-            // newnewData.forEach(e=> )
-        }
+      {data.map((element) => {
+        return (
+          <div key={element.fotos[1].id}>
+            <img src={element.fotos[0].imagen} alt="" />
+            <img src={element.fotos[1].imagen} alt="" />
+            <img src={element.fotos[2].imagen} alt="" />
+            <img src={element.fotos[3].imagen} alt="" />
+            <img src={element.fotos[4].imagen} alt="" />
+            <img src={element.fotos[5].imagen} alt="" />
+            
+          </div>
+        );
+      })}
     </div>
   );
 };
