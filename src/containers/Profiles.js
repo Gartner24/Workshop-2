@@ -10,8 +10,7 @@ const Profiles = () => {
 
     const getFotos = async (state) => {
     const peticion = await axios.get('https://json-worksop-02.herokuapp.com/users')
-    const data = (peticion.data[0]);
-    console.log(data.fotos);
+    console.log(peticion.data[0].fotos[1].imagen);
     }
 
     const [Fotos, setFotos] = useState(null);
