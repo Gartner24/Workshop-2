@@ -1,5 +1,6 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import Friend from '../containers/Friend'
 import Home from '../containers/Home'
 
 const AppRoutes = () => {
@@ -7,6 +8,8 @@ const AppRoutes = () => {
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/profile/" element={<Friend />} />
+            <Route path="*" element={<Navigate to="/" />} />
         </Routes>
     </BrowserRouter>
   )
